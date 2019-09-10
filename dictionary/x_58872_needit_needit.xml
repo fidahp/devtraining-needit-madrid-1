@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element audit="true" extends="task" label="Needit" max_length="40" name="x_58872_needit_needit" type="collection">
+        <element label="Requested for" mandatory="true" max_length="32" name="u_requested_for" reference="x_58872_needit_needit" type="reference"/>
+        <element attributes="edge_encryption_enabled=true" choice="1" default="Shilpa" label="Request type" mandatory="true" max_length="40" name="u_request_type" type="string">
+            <choice>
+                <element inactive_on_update="false" label="HR" sequence="0" value="Shilpa"/>
+                <element inactive_on_update="false" label="Team Lead" sequence="1" value="Vikul"/>
+                <element inactive_on_update="false" label="Manager" sequence="2" value="Matekar"/>
+            </choice>
+        </element>
+        <element attributes="edge_encryption_enabled=true" choice="1" default="HR 2" label="What needed" mandatory="true" max_length="40" name="u_what_needed" type="string">
+            <choice>
+                <element inactive="true" inactive_on_update="true" label="HR 1" sequence="0" value="Shilpa"/>
+                <element inactive_on_update="false" label="Shilpa" sequence="0" value="HR 1"/>
+                <element inactive="true" inactive_on_update="true" label="HR 2" sequence="1" value="Sonali"/>
+                <element inactive_on_update="false" label="Sonali" sequence="1" value="HR 2"/>
+                <element inactive="true" inactive_on_update="true" label="Team lead 1" sequence="2" value="Vikul"/>
+                <element inactive_on_update="false" label="Vikul" sequence="2" value="Team lead 1"/>
+                <element inactive_on_update="false" label="Kaustav" sequence="3" value="Team lead 2"/>
+                <element inactive="true" inactive_on_update="true" label="Team lead 2" sequence="3" value="Kaustav"/>
+                <element inactive="true" inactive_on_update="true" label="Manager 1" sequence="4" value="Matekar"/>
+                <element inactive_on_update="false" label="Matekat" sequence="4" value="Manager 1"/>
+                <element inactive="true" inactive_on_update="true" label="Manager 2" sequence="5" value="S Pathak"/>
+                <element inactive_on_update="false" label="S Pathak" sequence="5" value="Manager 2"/>
+            </choice>
+        </element>
+        <element attributes="edge_encryption_enabled=true" label="When needed" mandatory="true" max_length="40" name="u_when_needed" type="glide_date_time"/>
+    </element>
+</database>
