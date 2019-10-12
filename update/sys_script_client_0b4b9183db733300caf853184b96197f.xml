@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_script_client">
+    <sys_script_client action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <applies_extended>false</applies_extended>
+        <condition/>
+        <description>Only display What needed choices that match the Request type value.</description>
+        <field>u_request_type</field>
+        <global>true</global>
+        <isolate_script>true</isolate_script>
+        <messages/>
+        <name>NeedIt Request Type Options</name>
+        <order/>
+        <script><![CDATA[function onChange(control, oldValue, newValue, isLoading, isTemplate) {
+  if(newvalue == ' ')
+{
+
+   return;  
+
+}
+
+var whatneeded = g_form.getvalue('u_what_needed');
+
+g_form.clearoptions('u_what_needed');
+
+
+if(newvalue == 'HR')
+{
+
+  g_form.addoption('u_what_needed','HR1', 'HumanResource1');
+  g_form.addoption('u_what_needed','HR2', 'HumanResource2');
+  g_form.addoption('u_what_needed','others', 'others');
+
+}
+
+if(newvalue == 'facilities')
+{
+
+ g_form.addoption('u_what_needed','facilities1', 'facilities1');
+ g_form.addoption('u_what_needed','facilities2', 'facilities2');
+ g_form.addoption('u_what_needed','others', 'others');
+
+}
+
+if(newvalue == 'legal')
+{
+
+ g_form.addoption('u_what_needed','legal1', 'legal1');
+ g_form.addoption('u_what_needed','legal2', 'legal2');
+ g_form.addoption('u_what_needed','others', 'others');
+
+}
+
+if(isloading && !g_form.isnewrecord())
+{
+
+ g_form.setvalue('u_what_needed', whatneeded);
+
+}
+   
+}]]></script>
+        <sys_class_name>sys_script_client</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2019-09-14 15:19:04</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>0b4b9183db733300caf853184b96197f</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>NeedIt Request Type Options</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="NeedIt" source="x_58872_needit">6ead8e780f603200cd674f8ce1050ed1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="NeedIt">6ead8e780f603200cd674f8ce1050ed1</sys_scope>
+        <sys_update_name>sys_script_client_0b4b9183db733300caf853184b96197f</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2019-09-14 15:24:17</sys_updated_on>
+        <table>x_58872_needit_needit</table>
+        <type>onChange</type>
+        <ui_type>10</ui_type>
+        <view/>
+    </sys_script_client>
+</record_update>
